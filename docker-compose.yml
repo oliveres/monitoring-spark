@@ -119,7 +119,7 @@ services:
   pgbouncer-exporter:
     profiles:
       - pgbouncer
-    image: prometheuscommunity/pgbouncer_exporter:latest
+    image: prometheuscommunity/pgbouncer-exporter:latest
     container_name: monitoring-pgbouncer-exporter
     restart: unless-stopped
     networks:
