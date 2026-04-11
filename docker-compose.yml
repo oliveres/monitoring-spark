@@ -119,7 +119,7 @@ services:
   pgbouncer-exporter:
     profiles:
       - pgbouncer
-    image: spreaker/prometheus-pgbouncer-exporter:latest
+    image: prometheuscommunity/pgbouncer_exporter:latest
     container_name: monitoring-pgbouncer-exporter
     restart: unless-stopped
     networks:
@@ -128,7 +128,7 @@ services:
     expose:
       - 9127
     command:
-      - '--pgBouncer.connString=${PGBOUNCER_EXPORTER_CONN_STRING}'
+      - '--pgBouncer.connectionString=${PGBOUNCER_EXPORTER_CONN_STRING}'
       - '--web.listen-address=0.0.0.0:9127'
 
 volumes:
