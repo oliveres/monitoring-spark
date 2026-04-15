@@ -10,7 +10,7 @@ Monitoring stack for Nvidia DGX Spark and OEM variants (Gigabyte AI TOP Atom). C
 
 ### Docker Compose
 
-- **Prometheus Agent** – scrapes all local exporters, keeps zero retention, remote-writes to central Prometheus.
+- **Prometheus Agent** – runs in agent mode (WAL only, no local TSDB), scrapes all local exporters and remote-writes to central Prometheus.
 - **Node Exporter** – host-level disk I/O, network interfaces, filesystems.
 - **cAdvisor** – per-container CPU, memory, I/O metrics.
 
