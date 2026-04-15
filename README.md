@@ -57,7 +57,7 @@ Download the latest `nv-monitor-linux-arm64` binary from [nv-monitor releases](h
 
 ```bash
 # Download the binary (replace v1.9.0 with the latest version)
-wget https://github.com/wentbackward/nv-monitor/releases/download/v1.9.0/nv-monitor-linux-arm64
+sudo wget https://github.com/wentbackward/nv-monitor/releases/download/v1.9.0/nv-monitor-linux-arm64
 
 # Install to /usr/local/bin
 sudo mv nv-monitor-linux-arm64 /usr/local/bin/nv-monitor
