@@ -1534,7 +1534,7 @@
                   "mode": "off"
                 }
               },
-              "unit": "megahertz"
+              "unit": "rotfreqMHz"
             },
             "overrides": []
           },
@@ -2387,7 +2387,7 @@
                   "mode": "off"
                 }
               },
-              "unit": "megahertz"
+              "unit": "rotfreqMHz"
             },
             "overrides": []
           },
