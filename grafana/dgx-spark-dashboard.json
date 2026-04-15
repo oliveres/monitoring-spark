@@ -75,7 +75,421 @@
         "y": 0
       },
       "id": 1,
-      "title": "Overview",
+      "title": "Performance Overview",
+      "type": "row",
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 200
+                  },
+                  {
+                    "color": "red",
+                    "value": 350
+                  }
+                ]
+              },
+              "unit": "watt"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 1
+          },
+          "id": 4,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "GPU Power",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_gpu_power_watts{host=\"$host\"}",
+              "instant": true,
+              "legendFormat": "GPU Power",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 90
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 4,
+            "y": 1
+          },
+          "id": 5,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "GPU Util",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_gpu_utilization_percent{host=\"$host\"}",
+              "instant": true,
+              "legendFormat": "GPU Util",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 90
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 8,
+            "y": 1
+          },
+          "id": 6,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "CPU Util",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_cpu_usage_percent{host=\"$host\",cpu=\"overall\"}",
+              "instant": true,
+              "legendFormat": "CPU Util",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 85
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 12,
+            "y": 1
+          },
+          "id": 7,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "RAM",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_memory_used_bytes{host=\"$host\"} / nv_memory_total_bytes{host=\"$host\"} * 100",
+              "instant": true,
+              "legendFormat": "RAM %",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "dtdurations"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 16,
+            "y": 1
+          },
+          "id": 8,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Uptime",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_uptime_seconds{host=\"$host\"}",
+              "instant": true,
+              "legendFormat": "Uptime",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 10
+                  },
+                  {
+                    "color": "red",
+                    "value": 20
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 20,
+            "y": 1
+          },
+          "id": 9,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Load 1m",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "nv_load_average{host=\"$host\",interval=\"1m\"}",
+              "instant": true,
+              "legendFormat": "Load 1m",
+              "refId": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 91,
+      "title": "Temperature Overview",
       "type": "row",
       "panels": [
         {
@@ -234,28 +648,28 @@
                   },
                   {
                     "color": "yellow",
-                    "value": 200
+                    "value": 60
                   },
                   {
                     "color": "red",
-                    "value": 350
+                    "value": 80
                   }
                 ]
               },
-              "unit": "watt"
+              "unit": "celsius"
             },
             "overrides": []
           },
           "gridPos": {
             "h": 4,
-            "w": 3,
+            "w": 2,
             "x": 6,
             "y": 1
           },
-          "id": 4,
+          "id": 82,
           "options": {
             "colorMode": "background",
-            "graphMode": "none",
+            "graphMode": "area",
             "justifyMode": "center",
             "orientation": "auto",
             "reduceOptions": {
@@ -267,7 +681,7 @@
             },
             "textMode": "auto"
           },
-          "title": "GPU Power",
+          "title": "Zone 1",
           "type": "stat",
           "targets": [
             {
@@ -275,9 +689,9 @@
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_gpu_power_watts{host=\"$host\"}",
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp1\"}",
               "instant": true,
-              "legendFormat": "GPU Power",
+              "legendFormat": "Zone 1",
               "refId": "A"
             }
           ]
@@ -302,28 +716,28 @@
                   },
                   {
                     "color": "yellow",
-                    "value": 70
+                    "value": 60
                   },
                   {
                     "color": "red",
-                    "value": 90
+                    "value": 80
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "celsius"
             },
             "overrides": []
           },
           "gridPos": {
             "h": 4,
-            "w": 3,
-            "x": 9,
+            "w": 2,
+            "x": 8,
             "y": 1
           },
-          "id": 5,
+          "id": 83,
           "options": {
             "colorMode": "background",
-            "graphMode": "none",
+            "graphMode": "area",
             "justifyMode": "center",
             "orientation": "auto",
             "reduceOptions": {
@@ -335,7 +749,7 @@
             },
             "textMode": "auto"
           },
-          "title": "GPU Util",
+          "title": "Zone 2",
           "type": "stat",
           "targets": [
             {
@@ -343,9 +757,9 @@
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_gpu_utilization_percent{host=\"$host\"}",
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp2\"}",
               "instant": true,
-              "legendFormat": "GPU Util",
+              "legendFormat": "Zone 2",
               "refId": "A"
             }
           ]
@@ -370,28 +784,96 @@
                   },
                   {
                     "color": "yellow",
-                    "value": 70
+                    "value": 60
                   },
                   {
                     "color": "red",
-                    "value": 90
+                    "value": 80
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "celsius"
             },
             "overrides": []
           },
           "gridPos": {
             "h": 4,
-            "w": 3,
+            "w": 2,
+            "x": 10,
+            "y": 1
+          },
+          "id": 84,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Zone 3",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp3\"}",
+              "instant": true,
+              "legendFormat": "Zone 3",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 60
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 2,
             "x": 12,
             "y": 1
           },
-          "id": 6,
+          "id": 85,
           "options": {
             "colorMode": "background",
-            "graphMode": "none",
+            "graphMode": "area",
             "justifyMode": "center",
             "orientation": "auto",
             "reduceOptions": {
@@ -403,7 +885,7 @@
             },
             "textMode": "auto"
           },
-          "title": "CPU Util",
+          "title": "Zone 4",
           "type": "stat",
           "targets": [
             {
@@ -411,9 +893,281 @@
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_cpu_usage_percent{host=\"$host\",cpu=\"overall\"}",
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp4\"}",
               "instant": true,
-              "legendFormat": "CPU Util",
+              "legendFormat": "Zone 4",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 60
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 2,
+            "x": 14,
+            "y": 1
+          },
+          "id": 86,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Zone 5",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp5\"}",
+              "instant": true,
+              "legendFormat": "Zone 5",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 60
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 2,
+            "x": 16,
+            "y": 1
+          },
+          "id": 87,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Zone 6",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp6\"}",
+              "instant": true,
+              "legendFormat": "Zone 6",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 60
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 2,
+            "x": 18,
+            "y": 1
+          },
+          "id": 88,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "Zone 7",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"thermal_thermal_zone0\",sensor=\"temp7\"}",
+              "instant": true,
+              "legendFormat": "Zone 7",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 105
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 2,
+            "x": 20,
+            "y": 1
+          },
+          "id": 89,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "title": "NIC",
+          "type": "stat",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+              },
+              "expr": "max(node_hwmon_temp_celsius{host=\"$host\",chip=~\"0000.*|0002.*\"})",
+              "instant": true,
+              "legendFormat": "NIC max",
               "refId": "A"
             }
           ]
@@ -446,145 +1200,17 @@
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "celsius"
             },
             "overrides": []
           },
           "gridPos": {
             "h": 4,
-            "w": 3,
-            "x": 15,
+            "w": 2,
+            "x": 22,
             "y": 1
           },
-          "id": 7,
-          "options": {
-            "colorMode": "background",
-            "graphMode": "none",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "textMode": "auto"
-          },
-          "title": "RAM",
-          "type": "stat",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "nv_memory_used_bytes{host=\"$host\"} / nv_memory_total_bytes{host=\"$host\"} * 100",
-              "instant": true,
-              "legendFormat": "RAM %",
-              "refId": "A"
-            }
-          ]
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "dtdurations"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 3,
-            "x": 18,
-            "y": 1
-          },
-          "id": 8,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "none",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "textMode": "auto"
-          },
-          "title": "Uptime",
-          "type": "stat",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "nv_uptime_seconds{host=\"$host\"}",
-              "instant": true,
-              "legendFormat": "Uptime",
-              "refId": "A"
-            }
-          ]
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "yellow",
-                    "value": 10
-                  },
-                  {
-                    "color": "red",
-                    "value": 20
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 3,
-            "x": 21,
-            "y": 1
-          },
-          "id": 9,
+          "id": 90,
           "options": {
             "colorMode": "background",
             "graphMode": "area",
@@ -599,7 +1225,7 @@
             },
             "textMode": "auto"
           },
-          "title": "Load 1m",
+          "title": "NVMe",
           "type": "stat",
           "targets": [
             {
@@ -607,9 +1233,9 @@
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_load_average{host=\"$host\",interval=\"1m\"}",
+              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"nvme_nvme0\",sensor=\"temp1\"}",
               "instant": true,
-              "legendFormat": "Load 1m",
+              "legendFormat": "NVMe",
               "refId": "A"
             }
           ]
@@ -622,7 +1248,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 1
+        "y": 2
       },
       "id": 10,
       "title": "GPU",
@@ -1049,7 +1675,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 3
       },
       "id": 74,
       "title": "Hardware Temperatures",
@@ -1094,7 +1720,7 @@
                   "mode": "none"
                 },
                 "thresholdsStyle": {
-                  "mode": "off"
+                  "mode": "line"
                 }
               },
               "mappings": [],
@@ -1111,7 +1737,7 @@
                   },
                   {
                     "color": "red",
-                    "value": 90
+                    "value": 105
                   }
                 ]
               },
@@ -1152,15 +1778,6 @@
               "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=~\"0000.*|0002.*\"}",
               "legendFormat": "NIC {{chip}} {{sensor}}",
               "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "node_hwmon_temp_crit_celsius{host=\"$host\",chip=~\"0000.*|0002.*\"}",
-              "legendFormat": "CRIT {{chip}}",
-              "refId": "B"
             }
           ]
         },
@@ -1203,7 +1820,7 @@
                   "mode": "none"
                 },
                 "thresholdsStyle": {
-                  "mode": "off"
+                  "mode": "line"
                 }
               },
               "mappings": [],
@@ -1220,7 +1837,7 @@
                   },
                   {
                     "color": "red",
-                    "value": 80
+                    "value": 85
                   }
                 ]
               },
@@ -1261,15 +1878,6 @@
               "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"nvme_nvme0\"}",
               "legendFormat": "NVMe {{sensor}}",
               "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "node_hwmon_temp_crit_celsius{host=\"$host\",chip=\"nvme_nvme0\"}",
-              "legendFormat": "NVMe CRIT",
-              "refId": "B"
             }
           ]
         },
@@ -1479,7 +2087,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 4
       },
       "id": 20,
       "title": "CPU",
@@ -1623,12 +2231,12 @@
           "options": {
             "legend": {
               "calcs": [
-                "mean",
-                "max"
+                "lastNotNull"
               ],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
+              "displayMode": "table",
+              "placement": "right",
+              "sortBy": "Last *",
+              "sortDesc": true
             },
             "tooltip": {
               "mode": "multi",
@@ -2016,7 +2624,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 5
       },
       "id": 30,
       "title": "Memory & Swap",
@@ -2640,7 +3248,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "id": 40,
       "title": "RDMA / InfiniBand",
@@ -2903,138 +3511,6 @@
               "refId": "A"
             }
           ]
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "state"
-                },
-                "properties": [
-                  {
-                    "id": "mappings",
-                    "value": [
-                      {
-                        "options": {
-                          "ACTIVE": {
-                            "color": "green",
-                            "index": 0,
-                            "text": "ACTIVE"
-                          }
-                        },
-                        "type": "value"
-                      },
-                      {
-                        "options": {
-                          "DOWN": {
-                            "color": "red",
-                            "index": 1,
-                            "text": "DOWN"
-                          }
-                        },
-                        "type": "value"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "custom.cellOptions",
-                    "value": {
-                      "type": "color-background"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 4,
-            "x": 20,
-            "y": 9
-          },
-          "id": 44,
-          "options": {
-            "cellHeight": "sm",
-            "footer": {
-              "countRows": false,
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true
-          },
-          "title": "RDMA Ports",
-          "transformations": [
-            {
-              "id": "labelsToFields",
-              "options": {
-                "keepLabels": [
-                  "device",
-                  "port",
-                  "state",
-                  "rate"
-                ],
-                "mode": "rows"
-              }
-            },
-            {
-              "id": "organize",
-              "options": {
-                "excludeByName": {
-                  "Time": true,
-                  "Value": true,
-                  "__name__": true,
-                  "host": true,
-                  "job": true,
-                  "instance": true
-                },
-                "renameByName": {}
-              }
-            }
-          ],
-          "type": "table",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "nv_rdma_info{host=\"$host\"}",
-              "instant": true,
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ]
         }
       ]
     },
@@ -3044,7 +3520,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 7
       },
       "id": 50,
       "title": "Disk (Node Exporter)",
@@ -3307,7 +3783,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 8
       },
       "id": 60,
       "title": "Network (Node Exporter)",
@@ -3370,8 +3846,8 @@
                 "mean",
                 "max"
               ],
-              "displayMode": "list",
-              "placement": "bottom",
+              "displayMode": "table",
+              "placement": "right",
               "showLegend": true
             },
             "tooltip": {
@@ -3459,8 +3935,8 @@
                 "mean",
                 "max"
               ],
-              "displayMode": "list",
-              "placement": "bottom",
+              "displayMode": "table",
+              "placement": "right",
               "showLegend": true
             },
             "tooltip": {
@@ -3517,7 +3993,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 9
       },
       "id": 70,
       "title": "Containers (cAdvisor)",
@@ -3580,8 +4056,8 @@
                 "mean",
                 "max"
               ],
-              "displayMode": "list",
-              "placement": "bottom",
+              "displayMode": "table",
+              "placement": "right",
               "showLegend": true
             },
             "tooltip": {
@@ -3660,8 +4136,8 @@
                 "mean",
                 "max"
               ],
-              "displayMode": "list",
-              "placement": "bottom",
+              "displayMode": "table",
+              "placement": "right",
               "showLegend": true
             },
             "tooltip": {
@@ -3680,163 +4156,6 @@
               "expr": "container_memory_usage_bytes{host=\"$host\",name!=\"\",name!~\".*POD.*\"}",
               "legendFormat": "{{name}}",
               "refId": "A"
-            }
-          ]
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  }
-                ]
-              }
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "CPU %"
-                },
-                "properties": [
-                  {
-                    "id": "unit",
-                    "value": "percent"
-                  },
-                  {
-                    "id": "custom.cellOptions",
-                    "value": {
-                      "mode": "gradient",
-                      "type": "gauge"
-                    }
-                  },
-                  {
-                    "id": "thresholds",
-                    "value": {
-                      "mode": "absolute",
-                      "steps": [
-                        {
-                          "color": "green",
-                          "value": null
-                        },
-                        {
-                          "color": "yellow",
-                          "value": 70
-                        },
-                        {
-                          "color": "red",
-                          "value": 90
-                        }
-                      ]
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "RAM"
-                },
-                "properties": [
-                  {
-                    "id": "unit",
-                    "value": "bytes"
-                  },
-                  {
-                    "id": "custom.cellOptions",
-                    "value": {
-                      "mode": "gradient",
-                      "type": "gauge"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 8,
-            "x": 16,
-            "y": 12
-          },
-          "id": 73,
-          "options": {
-            "cellHeight": "sm",
-            "footer": {
-              "countRows": false,
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true
-          },
-          "title": "Container Table",
-          "transformations": [
-            {
-              "id": "merge",
-              "options": {}
-            },
-            {
-              "id": "organize",
-              "options": {
-                "excludeByName": {
-                  "Time": true,
-                  "instance": true,
-                  "job": true,
-                  "host": true,
-                  "id": true,
-                  "image": true
-                },
-                "renameByName": {
-                  "name": "Container",
-                  "Value #A": "CPU %",
-                  "Value #B": "RAM"
-                }
-              }
-            }
-          ],
-          "type": "table",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "sum(rate(container_cpu_usage_seconds_total{host=\"$host\",name!=\"\",name!~\".*POD.*\"}[5m])) by (name) * 100",
-              "instant": true,
-              "legendFormat": "{{name}}",
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "container_memory_usage_bytes{host=\"$host\",name!=\"\",name!~\".*POD.*\"}",
-              "instant": true,
-              "legendFormat": "{{name}}",
-              "refId": "B"
             }
           ]
         }
