@@ -51,6 +51,15 @@ DGX Spark / AI TOP Atom
 
 ## Deployment
 
+### 0. Clone this repo
+
+```bash
+git clone https://github.com/oliveres/monitoring-spark.git
+cd monitoring-spark
+```
+
+All subsequent paths are relative to the repo root.
+
 ### 1. Install nv-monitor on host
 
 Download the latest `nv-monitor-linux-arm64` binary from [nv-monitor releases](https://github.com/wentbackward/nv-monitor/releases). The release asset is a standalone binary (no archive, no extension) — download it directly, rename to `nv-monitor`, and make it executable:
