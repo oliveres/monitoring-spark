@@ -64,10 +64,3 @@ remote_write:
     metadata_config:
       send: true
       send_interval: 1m
-
-    write_relabel_configs:
-      - source_labels: [__name__]
-        regex: '.*'
-        target_label: host
-        replacement: '${HOSTNAME}'
-        action: replace
