@@ -1,0 +1,14 @@
+[Unit]
+Description=nv-monitor Prometheus exporter
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/nv-monitor -n -p 9101
+Restart=always
+RestartSec=5
+# Optional: Bearer token for Prometheus scrape auth
+# Environment=NV_MONITOR_TOKEN=your-token-here
+
+[Install]
+WantedBy=multi-user.target
