@@ -4,51 +4,25 @@ services:
       context: ./prometheus
       dockerfile: Dockerfile
       args:
-        HOSTNAME: ${HOSTNAME:-edge-host}
+        HOSTNAME: ${HOSTNAME:-spark}
         CENTRAL_PROMETHEUS_URL: ${CENTRAL_PROMETHEUS_URL}
         BASIC_AUTH_USER: ${BASIC_AUTH_USER:-}
         BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-}
-        CADDY_METRICS_TARGET: ${CADDY_METRICS_TARGET:-}
-        POSTGRES_EXPORTER_TARGET: ${POSTGRES_EXPORTER_TARGET:-}
-        PGBOUNCER_EXPORTER_TARGET: ${PGBOUNCER_EXPORTER_TARGET:-}
     container_name: monitoring-prometheus
     restart: unless-stopped
     user: "nobody"
     networks:
       - monitoring
-      - prod_net  # Access to production network (for Caddy, PostgreSQL, etc.)
     extra_hosts:
       - "host.docker.internal:host-gateway"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention.time=0'  # Zero retention - pure agent mode
+      - '--storage.tsdb.retention.time=0'
       - '--web.listen-address=0.0.0.0:9090'
       - '--web.enable-lifecycle'
     depends_on:
       - cadvisor
-      - node-exporter
-
-  promtail:
-    build:
-      context: ./promtail
-      dockerfile: Dockerfile
-    container_name: monitoring-promtail
-    restart: unless-stopped
-    user: "0:0"
-    networks:
-      - monitoring
-    # command removed - using ENTRYPOINT from Dockerfile with -config.expand-env=true
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/lib/docker/containers:/var/lib/docker/containers:ro
-      - /var/log:/var/log:ro
-      - promtail-data:/tmp
-    environment:
-      - HOSTNAME=${HOSTNAME:-edge-host}
-      - CENTRAL_LOKI_URL=${CENTRAL_LOKI_URL}
-      - BASIC_AUTH_USER=${BASIC_AUTH_USER:-}
-      - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD:-}
 
   cadvisor:
     image: ghcr.io/google/cadvisor:latest
@@ -90,53 +64,6 @@ services:
       - /:/rootfs:ro
       - /:/host:ro,rslave
 
-  postgres-exporter:
-    profiles:
-      - postgres
-    build:
-      context: ./postgres-exporter
-      dockerfile: Dockerfile
-    container_name: monitoring-postgres-exporter
-    restart: unless-stopped
-    networks:
-      - monitoring
-      - prod_net  # External network to reach PostgreSQL
-    expose:
-      - 9187
-    environment:
-      # PostgreSQL connection string - set in Portainer
-      DATA_SOURCE_NAME: "${POSTGRES_DATA_SOURCE_NAME}"
-
-      # Enable custom TimescaleDB queries
-      PG_EXPORTER_EXTEND_QUERY_PATH: "/etc/queries.yaml"
-
-      # Additional metrics
-      PG_EXPORTER_DISABLE_DEFAULT_METRICS: "false"
-      PG_EXPORTER_DISABLE_SETTINGS_METRICS: "false"
-      PG_EXPORTER_AUTO_DISCOVER_DATABASES: "true"
-      PG_EXPORTER_INCLUDE_DATABASES: "*"
-
-  pgbouncer-exporter:
-    profiles:
-      - pgbouncer
-    image: prometheuscommunity/pgbouncer-exporter:latest
-    container_name: monitoring-pgbouncer-exporter
-    restart: unless-stopped
-    networks:
-      - monitoring
-      - prod_net
-    expose:
-      - 9127
-    command:
-      - '--pgBouncer.connectionString=${PGBOUNCER_EXPORTER_CONN_STRING}'
-      - '--web.listen-address=0.0.0.0:9127'
-
-volumes:
-  promtail-data:
-
 networks:
   monitoring:
     driver: bridge
-  prod_net:
-    external: true
-    name: ${PROD_NETWORK:-production-network}
