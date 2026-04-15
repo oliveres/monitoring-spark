@@ -82,6 +82,15 @@ systemctl status nv-monitor
 curl -s localhost:9101/metrics | head -20
 ```
 
+**Bonus: Interactive TUI mode.** nv-monitor can also run as a terminal system monitor with real-time GPU, CPU, and memory charts. Just run it without the `-n` (headless) flag:
+
+```bash
+nv-monitor              # TUI only
+nv-monitor -p 9101      # TUI + Prometheus exporter simultaneously
+```
+
+Use `q` to quit, `s` to toggle GPU process sort, `c` to cycle CPU column layout, `j`/`k` to scroll cores.
+
 ### 2. Configure environment
 
 ```bash
