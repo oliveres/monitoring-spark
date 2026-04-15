@@ -53,11 +53,18 @@ DGX Spark / AI TOP Atom
 
 ### 1. Install nv-monitor on host
 
-Download the latest `nv-monitor-linux-arm64` binary from [nv-monitor releases](https://github.com/wentbackward/nv-monitor/releases):
+Download the latest `nv-monitor-linux-arm64` binary from [nv-monitor releases](https://github.com/wentbackward/nv-monitor/releases). The release asset is a standalone binary (no archive, no extension) — download it directly, rename to `nv-monitor`, and make it executable:
 
 ```bash
-sudo cp nv-monitor-linux-arm64 /usr/local/bin/nv-monitor
+# Download the binary (replace v1.9.0 with the latest version)
+wget https://github.com/wentbackward/nv-monitor/releases/download/v1.9.0/nv-monitor-linux-arm64
+
+# Install to /usr/local/bin
+sudo mv nv-monitor-linux-arm64 /usr/local/bin/nv-monitor
 sudo chmod +x /usr/local/bin/nv-monitor
+
+# Quick test — should print version or show TUI
+nv-monitor --help
 ```
 
 Install the systemd service (template included in this repo):
@@ -68,7 +75,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now nv-monitor
 ```
 
-Verify:
+Verify the Prometheus exporter is running:
 
 ```bash
 systemctl status nv-monitor
