@@ -37,7 +37,7 @@ DGX Spark / AI TOP Atom
 
 | Component | Type | Port | Metrics |
 |-----------|------|------|---------|
-| [nv-monitor](https://github.com/wentbackward/nv-monitor) | Native (systemd) | 9101 | GPU, CPU, RAM (DGX Spark native) |
+| [nv-monitor](https://github.com/wentbackward/nv-monitor) | Native (systemd) | 9101 | GPU, CPU, RAM, RDMA/InfiniBand (DGX Spark native) |
 | [Prometheus](https://prometheus.io/) | Docker | 9090 | Agent mode, remote-write to central |
 | [Node Exporter](https://github.com/prometheus/node_exporter) | Docker (host network) | 9100 | Disk, network, filesystems |
 | [cAdvisor](https://github.com/google/cadvisor) | Docker | 8080 | Per-container CPU, RAM, I/O |
@@ -54,7 +54,8 @@ DGX Spark / AI TOP Atom
 ### 0. Clone this repo
 
 ```bash
-git clone https://github.com/oliveres/monitoring-spark.git
+sudo git clone https://github.com/oliveres/monitoring-spark.git
+sudo chown -R $USER:$USER monitoring-spark
 cd monitoring-spark
 ```
 
@@ -127,8 +128,8 @@ docker compose up -d --build
 # nv-monitor running on host
 systemctl status nv-monitor
 
-# GPU/CPU/RAM metrics available
-curl -s localhost:9101/metrics | grep -E "^(gpu|cpu|mem)" | head -10
+# GPU/CPU/RAM metrics available (all metrics have nv_ prefix)
+curl -s localhost:9101/metrics | grep "^nv_" | head -10
 
 # Docker services running
 docker ps | grep monitoring-
@@ -166,9 +167,12 @@ All scrape jobs attach the `host` label matching `HOSTNAME`. The `external_label
 
 ## DGX Spark Monitoring Notes
 
-- **GPU memory**: `nvidia-smi` reports "Memory-Usage: Not Supported" on GB10 due to unified memory architecture. nv-monitor handles this correctly by reporting system-wide memory instead.
-- **CPU power telemetry**: Not available on GB10 — NVIDIA has not exposed CPU power rail information. GPU power draw is available via `nvidia-smi`.
+- **GPU memory**: `nv_gpu_memory_total_bytes` and `nv_gpu_memory_used_bytes` are exposed but return no data on GB10 due to unified memory architecture. Use `nv_memory_used_bytes` (system-wide) instead.
+- **GPU fan speed**: `nv_gpu_fan_speed_percent` returns no data on GB10 (no discrete fan).
+- **CPU power telemetry**: Not available on GB10 — NVIDIA has not exposed CPU power rail information. GPU power draw is available via `nv_gpu_power_watts`.
+- **RDMA/InfiniBand**: nv-monitor auto-detects ConnectX-7 ports and reports `nv_rdma_info`, `nv_rdma_xmit_bytes_total`, `nv_rdma_recv_bytes_total`, throughput, and errors per port.
 - **No BMC/IPMI**: DGX Spark does not have a BMC. All monitoring is in-band (through the OS).
+- **All metrics use `nv_` prefix**: `nv_gpu_*`, `nv_cpu_*`, `nv_memory_*`, `nv_swap_*`, `nv_rdma_*`, `nv_load_average`, `nv_uptime_seconds`.
 
 ## File Structure
 
