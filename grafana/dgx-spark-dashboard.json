@@ -81,7 +81,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -137,7 +137,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_gpu_temperature_celsius{host=\"$host\"}",
           "instant": true,
@@ -149,7 +149,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -205,7 +205,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_cpu_temperature_celsius{host=\"$host\"}",
           "instant": true,
@@ -217,7 +217,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -273,7 +273,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_gpu_power_watts{host=\"$host\"}",
           "instant": true,
@@ -285,7 +285,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -341,7 +341,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_gpu_utilization_percent{host=\"$host\"}",
           "instant": true,
@@ -353,7 +353,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -409,7 +409,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_cpu_usage_percent{host=\"$host\",cpu=\"overall\"}",
           "instant": true,
@@ -421,7 +421,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -477,7 +477,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_memory_used_bytes{host=\"$host\"} / nv_memory_total_bytes{host=\"$host\"} * 100",
           "instant": true,
@@ -489,7 +489,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -537,7 +537,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_uptime_seconds{host=\"$host\"}",
           "instant": true,
@@ -549,7 +549,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$datasource"
+        "uid": "Prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -605,7 +605,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "expr": "nv_load_average{host=\"$host\",interval=\"1m\"}",
           "instant": true,
@@ -629,7 +629,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -700,7 +700,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_utilization_percent{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}}",
@@ -711,7 +711,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -780,7 +780,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_temperature_celsius{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}}",
@@ -791,7 +791,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -860,7 +860,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_power_watts{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}}",
@@ -871,7 +871,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -940,7 +940,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_clock_mhz{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}} {{type}}",
@@ -951,7 +951,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1022,7 +1022,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_encoder_utilization_percent{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}} Encoder",
@@ -1031,7 +1031,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_gpu_decoder_utilization_percent{host=\"$host\"}",
               "legendFormat": "GPU {{gpu}} Decoder",
@@ -1056,7 +1056,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1127,7 +1127,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_cpu_usage_percent{host=\"$host\",cpu=\"overall\"}",
               "legendFormat": "Overall",
@@ -1138,7 +1138,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1209,7 +1209,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_cpu_usage_percent{host=\"$host\",cpu!=\"overall\"}",
               "legendFormat": "{{cpu}}",
@@ -1220,7 +1220,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1289,7 +1289,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_cpu_temperature_celsius{host=\"$host\"}",
               "legendFormat": "CPU Temp",
@@ -1300,7 +1300,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1369,7 +1369,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_cpu_frequency_mhz{host=\"$host\"}",
               "legendFormat": "CPU Freq",
@@ -1380,7 +1380,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1449,7 +1449,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_load_average{host=\"$host\",interval=\"1m\"}",
               "legendFormat": "1m",
@@ -1458,7 +1458,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_load_average{host=\"$host\",interval=\"5m\"}",
               "legendFormat": "5m",
@@ -1467,7 +1467,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_load_average{host=\"$host\",interval=\"15m\"}",
               "legendFormat": "15m",
@@ -1492,7 +1492,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1598,7 +1598,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_memory_used_bytes{host=\"$host\"}",
               "legendFormat": "Used",
@@ -1607,7 +1607,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_memory_bufcache_bytes{host=\"$host\"}",
               "legendFormat": "Buf/Cache",
@@ -1616,7 +1616,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_memory_total_bytes{host=\"$host\"}",
               "legendFormat": "Total",
@@ -1627,7 +1627,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1683,7 +1683,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_memory_used_bytes{host=\"$host\"} / nv_memory_total_bytes{host=\"$host\"} * 100",
               "instant": true,
@@ -1695,7 +1695,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1794,7 +1794,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_swap_used_bytes{host=\"$host\"}",
               "legendFormat": "Used",
@@ -1803,7 +1803,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_swap_total_bytes{host=\"$host\"}",
               "legendFormat": "Total",
@@ -1814,7 +1814,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1870,7 +1870,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_swap_used_bytes{host=\"$host\"} / nv_swap_total_bytes{host=\"$host\"} * 100",
               "instant": true,
@@ -1896,7 +1896,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1965,7 +1965,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_rdma_xmit_bytes_per_second{host=\"$host\"}",
               "legendFormat": "{{device}} {{port}} TX",
@@ -1974,7 +1974,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_rdma_recv_bytes_per_second{host=\"$host\"}",
               "legendFormat": "{{device}} {{port}} RX",
@@ -1985,7 +1985,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2054,7 +2054,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(nv_rdma_xmit_packets_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} TX",
@@ -2063,7 +2063,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(nv_rdma_recv_packets_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} RX",
@@ -2074,7 +2074,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2143,7 +2143,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(nv_rdma_errors_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} {{port}}",
@@ -2154,7 +2154,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2274,7 +2274,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "nv_rdma_info{host=\"$host\"}",
               "instant": true,
@@ -2300,7 +2300,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2369,7 +2369,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "-rate(node_disk_read_bytes_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} read",
@@ -2378,7 +2378,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_disk_written_bytes_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} write",
@@ -2389,7 +2389,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2458,7 +2458,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_disk_reads_completed_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} reads",
@@ -2467,7 +2467,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_disk_writes_completed_total{host=\"$host\"}[5m])",
               "legendFormat": "{{device}} writes",
@@ -2478,7 +2478,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2537,7 +2537,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "1 - node_filesystem_avail_bytes{host=\"$host\",fstype!~\"tmpfs|squashfs\"} / node_filesystem_size_bytes{host=\"$host\",fstype!~\"tmpfs|squashfs\"}",
               "instant": true,
@@ -2563,7 +2563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2632,7 +2632,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_receive_bytes_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} RX",
@@ -2641,7 +2641,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_transmit_bytes_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} TX",
@@ -2652,7 +2652,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2721,7 +2721,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_receive_errs_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} RX errors",
@@ -2730,7 +2730,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_transmit_errs_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} TX errors",
@@ -2739,7 +2739,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_receive_drop_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} RX drops",
@@ -2748,7 +2748,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "rate(node_network_transmit_drop_total{host=\"$host\",device!=\"lo\"}[5m])",
               "legendFormat": "{{device}} TX drops",
@@ -2773,7 +2773,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2842,7 +2842,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "sum(rate(container_cpu_usage_seconds_total{host=\"$host\",name!=\"\",name!~\".*POD.*\"}[5m])) by (name) * 100",
               "legendFormat": "{{name}}",
@@ -2853,7 +2853,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2922,7 +2922,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "container_memory_usage_bytes{host=\"$host\",name!=\"\",name!~\".*POD.*\"}",
               "legendFormat": "{{name}}",
@@ -2933,7 +2933,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$datasource"
+            "uid": "Prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -3068,7 +3068,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "sum(rate(container_cpu_usage_seconds_total{host=\"$host\",name!=\"\",name!~\".*POD.*\"}[5m])) by (name) * 100",
               "instant": true,
@@ -3078,7 +3078,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "$datasource"
+                "uid": "Prometheus"
               },
               "expr": "container_memory_usage_bytes{host=\"$host\",name!=\"\",name!~\".*POD.*\"}",
               "instant": true,
@@ -3102,28 +3102,10 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": true,
-          "text": "default",
-          "value": "default"
-        },
-        "hide": 0,
-        "includeAll": false,
-        "label": "Datasource",
-        "multi": false,
-        "name": "datasource",
-        "options": [],
-        "query": "prometheus",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "type": "datasource"
-      },
-      {
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "$datasource"
+          "uid": "Prometheus"
         },
         "definition": "label_values(up, host)",
         "hide": 0,
