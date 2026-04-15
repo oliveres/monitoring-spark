@@ -16,8 +16,8 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     command:
+      - '--agent'
       - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--enable-feature=agent'
       - '--storage.agent.path=/prometheus'
       - '--web.listen-address=0.0.0.0:9090'
       - '--web.enable-lifecycle'
