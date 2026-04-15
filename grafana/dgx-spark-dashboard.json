@@ -1984,12 +1984,46 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
+          "description": "CPU P-state throttling level per core. 0 = full performance, higher = more aggressive thermal throttling.",
           "fieldConfig": {
             "defaults": {
               "color": {
-                "mode": "thresholds"
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "stepAfter",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line"
+                }
               },
               "mappings": [],
+              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -1999,50 +2033,47 @@
                   },
                   {
                     "color": "yellow",
-                    "value": 60
+                    "value": 1
                   },
                   {
                     "color": "red",
-                    "value": 80
+                    "value": 5
                   }
                 ]
               },
-              "unit": "celsius"
+              "unit": "short"
             },
             "overrides": []
           },
           "gridPos": {
             "h": 8,
-            "w": 8,
-            "x": 16,
-            "y": 9
+            "w": 24,
+            "x": 0,
+            "y": 17
           },
-          "id": 78,
+          "id": 92,
           "options": {
-            "colorMode": "background",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "horizontal",
-            "reduceOptions": {
+            "legend": {
               "calcs": [
-                "lastNotNull"
+                "lastNotNull",
+                "max"
               ],
-              "fields": "",
-              "values": false
+              "displayMode": "table",
+              "placement": "right"
             },
-            "textMode": "auto"
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
           },
-          "title": "All Temperatures (Current)",
-          "type": "stat",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_gpu_temperature_celsius{host=\"$host\"}",
-              "instant": true,
-              "legendFormat": "GPU",
+              "expr": "max(node_cooling_device_cur_state{host=\"$host\",type=\"Processor\"})",
+              "legendFormat": "Max Throttle State",
               "refId": "A"
             },
             {
@@ -2050,32 +2081,13 @@
                 "type": "prometheus",
                 "uid": "Prometheus"
               },
-              "expr": "nv_cpu_temperature_celsius{host=\"$host\"}",
-              "instant": true,
-              "legendFormat": "CPU",
+              "expr": "sum(node_cooling_device_cur_state{host=\"$host\",type=\"Processor\"})",
+              "legendFormat": "Sum All Cores",
               "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "max(node_hwmon_temp_celsius{host=\"$host\",chip=~\"0000.*|0002.*\"})",
-              "instant": true,
-              "legendFormat": "NIC (max)",
-              "refId": "C"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "Prometheus"
-              },
-              "expr": "node_hwmon_temp_celsius{host=\"$host\",chip=\"nvme_nvme0\",sensor=\"temp1\"}",
-              "instant": true,
-              "legendFormat": "NVMe",
-              "refId": "D"
             }
-          ]
+          ],
+          "title": "CPU Thermal Throttling",
+          "type": "timeseries"
         }
       ]
     },
