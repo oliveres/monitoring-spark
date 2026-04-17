@@ -59,7 +59,7 @@
       }
     ]
   },
-  "description": "Side-by-side comparison of two DGX Spark / Gigabyte AI TOP Atom machines",
+  "description": "Side-by-side cluster view of two DGX Spark / Gigabyte AI TOP Atom machines",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -4735,7 +4735,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
+        "w": 9,
         "x": 0,
         "y": 159
       },
@@ -4757,7 +4757,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_bytes_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_bytes_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX",
           "refId": "A"
         },
@@ -4766,7 +4766,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_bytes_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_bytes_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX",
           "refId": "B"
         }
@@ -4818,8 +4818,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 6,
+        "w": 3,
+        "x": 9,
         "y": 159
       },
       "id": 67,
@@ -4840,7 +4840,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_errs_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_errs_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX errors",
           "refId": "A"
         },
@@ -4849,7 +4849,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_errs_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_errs_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX errors",
           "refId": "B"
         },
@@ -4858,7 +4858,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_drop_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_drop_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX drops",
           "refId": "C"
         },
@@ -4867,7 +4867,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_drop_total{host=\"$host1\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_drop_total{host=\"$host1\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX drops",
           "refId": "D"
         }
@@ -4919,7 +4919,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
+        "w": 9,
         "x": 12,
         "y": 159
       },
@@ -4941,7 +4941,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_bytes_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_bytes_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX",
           "refId": "A"
         },
@@ -4950,7 +4950,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_bytes_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_bytes_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX",
           "refId": "B"
         }
@@ -5002,8 +5002,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 18,
+        "w": 3,
+        "x": 21,
         "y": 159
       },
       "id": 69,
@@ -5024,7 +5024,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_errs_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_errs_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX errors",
           "refId": "A"
         },
@@ -5033,7 +5033,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_errs_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_errs_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX errors",
           "refId": "B"
         },
@@ -5042,7 +5042,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_drop_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_drop_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX drops",
           "refId": "C"
         },
@@ -5051,7 +5051,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_drop_total{host=\"$host2\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_drop_total{host=\"$host2\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX drops",
           "refId": "D"
         }
@@ -6855,7 +6855,7 @@
     "nvidia",
     "gpu",
     "monitoring",
-    "comparison"
+    "cluster"
   ],
   "templating": {
     "list": [
@@ -6921,8 +6921,8 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "DGX Spark Comparison",
-  "uid": "dgx-spark-comparison",
+  "title": "DGX Spark Cluster",
+  "uid": "dgx-spark-cluster",
   "version": 1,
   "weekStart": ""
 }
