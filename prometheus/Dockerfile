@@ -7,6 +7,7 @@ ARG HOSTNAME
 ARG CENTRAL_PROMETHEUS_URL
 ARG BASIC_AUTH_USER
 ARG BASIC_AUTH_PASSWORD
+ARG VLLM_METRICS_TARGET
 
 COPY prometheus.yml.template /tmp/prometheus.yml.template
 RUN envsubst < /tmp/prometheus.yml.template > /out/prometheus.yml

@@ -8,6 +8,7 @@ services:
         CENTRAL_PROMETHEUS_URL: ${CENTRAL_PROMETHEUS_URL}
         BASIC_AUTH_USER: ${BASIC_AUTH_USER:-}
         BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-}
+        VLLM_METRICS_TARGET: ${VLLM_METRICS_TARGET:-}
     container_name: monitoring-prometheus
     restart: unless-stopped
     user: "nobody"

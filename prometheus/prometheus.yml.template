@@ -38,6 +38,18 @@ scrape_configs:
         labels:
           host: '${HOSTNAME}'
 
+  # Optional: vLLM metrics (enabled when VLLM_METRICS_TARGET is set)
+  - job_name: 'vllm'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['${VLLM_METRICS_TARGET}']
+        labels:
+          host: '${HOSTNAME}'
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: '^$'
+        action: drop
+
   - job_name: 'prometheus'
     scrape_interval: 15s
     static_configs:
