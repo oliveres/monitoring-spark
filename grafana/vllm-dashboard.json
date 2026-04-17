@@ -1198,7 +1198,7 @@
         },
         "overrides": []
       },
-      "description": "Estimated FLOPS/s. May show 0 with quantized models (AWQ/GPTQ) or older vLLM versions that don't populate this metric.",
+      "description": "Estimated FLOPS/s per GPU. Requires vLLM to be started with the --enable-mfu-metrics flag. Without that flag the counter stays at 0.",
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 50 },
       "id": 26,
       "options": {
@@ -1258,7 +1258,7 @@
         },
         "overrides": []
       },
-      "description": "Estimated memory read bandwidth. May show 0 with quantized models or older vLLM versions.",
+      "description": "Estimated memory read bandwidth per GPU. Requires vLLM to be started with the --enable-mfu-metrics flag. Without that flag the counter stays at 0.",
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 50 },
       "id": 27,
       "options": {
@@ -1318,7 +1318,7 @@
         },
         "overrides": []
       },
-      "description": "Estimated memory write bandwidth. May show 0 with quantized models or older vLLM versions.",
+      "description": "Estimated memory write bandwidth per GPU. Requires vLLM to be started with the --enable-mfu-metrics flag. Without that flag the counter stays at 0.",
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 50 },
       "id": 28,
       "options": {
