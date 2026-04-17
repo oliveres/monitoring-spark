@@ -4178,7 +4178,7 @@
           "type": "prometheus",
           "uid": "Prometheus"
         },
-        "definition": "label_values(up, host)",
+        "definition": "label_values(up{job="nv-monitor"}, host)",
         "hide": 0,
         "includeAll": false,
         "label": "Host",
@@ -4186,7 +4186,7 @@
         "name": "host",
         "options": [],
         "query": {
-          "query": "label_values(up, host)",
+          "query": "label_values(up{job="nv-monitor"}, host)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 2,
