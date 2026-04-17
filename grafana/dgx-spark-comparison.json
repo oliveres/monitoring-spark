@@ -660,7 +660,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 0,
+        "x": 3,
         "y": 5
       },
       "id": 10,
@@ -728,7 +728,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 12,
+        "x": 15,
         "y": 5
       },
       "id": 11,
@@ -794,7 +794,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 3,
+        "x": 0,
         "y": 5
       },
       "id": 12,
@@ -862,7 +862,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 15,
+        "x": 12,
         "y": 5
       },
       "id": 13,
@@ -922,7 +922,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 6,
+        "x": 9,
         "y": 5
       },
       "id": 14,
@@ -982,7 +982,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 18,
+        "x": 21,
         "y": 5
       },
       "id": 15,
@@ -1050,14 +1050,13 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 9,
+        "x": 6,
         "y": 5
       },
       "id": 107,
       "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -1066,10 +1065,11 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "title": "Swap Usage",
-      "type": "stat",
+      "type": "gauge",
       "targets": [
         {
           "datasource": {
@@ -1118,14 +1118,13 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 21,
+        "x": 18,
         "y": 5
       },
       "id": 108,
       "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -1134,10 +1133,11 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "title": "Swap Usage",
-      "type": "stat",
+      "type": "gauge",
       "targets": [
         {
           "datasource": {
@@ -4063,7 +4063,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 9,
         "x": 0,
         "y": 141
       },
@@ -4146,7 +4146,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 9,
         "x": 12,
         "y": 141
       },
@@ -4229,9 +4229,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 149
+        "w": 3,
+        "x": 9,
+        "y": 141
       },
       "id": 58,
       "options": {
@@ -4303,9 +4303,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 149
+        "w": 3,
+        "x": 21,
+        "y": 141
       },
       "id": 59,
       "options": {
@@ -4337,7 +4337,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 157
+        "y": 149
       },
       "id": 60,
       "title": "Disk (Node Exporter)",
@@ -4392,7 +4392,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 158
+        "y": 150
       },
       "id": 61,
       "options": {
@@ -4475,7 +4475,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 158
+        "y": 150
       },
       "id": 62,
       "options": {
@@ -4558,7 +4558,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 158
+        "y": 150
       },
       "id": 63,
       "options": {
@@ -4641,7 +4641,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 158
+        "y": 150
       },
       "id": 64,
       "options": {
@@ -4682,7 +4682,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 166
+        "y": 158
       },
       "id": 65,
       "title": "Network (Node Exporter)",
@@ -4737,7 +4737,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 167
+        "y": 159
       },
       "id": 66,
       "options": {
@@ -4820,7 +4820,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 167
+        "y": 159
       },
       "id": 67,
       "options": {
@@ -4921,7 +4921,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 167
+        "y": 159
       },
       "id": 68,
       "options": {
@@ -5004,7 +5004,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 167
+        "y": 159
       },
       "id": 69,
       "options": {
@@ -5063,7 +5063,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 175
+        "y": 167
       },
       "id": 70,
       "title": "Containers (cAdvisor)",
@@ -5118,7 +5118,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 176
+        "y": 168
       },
       "id": 71,
       "options": {
@@ -5192,7 +5192,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 176
+        "y": 168
       },
       "id": 72,
       "options": {
@@ -5266,7 +5266,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 176
+        "y": 168
       },
       "id": 73,
       "options": {
@@ -5340,7 +5340,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 176
+        "y": 168
       },
       "id": 74,
       "options": {
@@ -5372,7 +5372,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 184
+        "y": 176
       },
       "id": 75,
       "title": "Temperature Overview",
@@ -5415,7 +5415,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 185
+        "y": 177
       },
       "id": 76,
       "options": {
@@ -5483,7 +5483,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 185
+        "y": 177
       },
       "id": 77,
       "options": {
@@ -5551,7 +5551,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 185
+        "y": 177
       },
       "id": 78,
       "options": {
@@ -5619,7 +5619,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 185
+        "y": 177
       },
       "id": 79,
       "options": {
@@ -5687,7 +5687,7 @@
         "h": 4,
         "w": 3,
         "x": 9,
-        "y": 185
+        "y": 177
       },
       "id": 80,
       "options": {
@@ -5755,7 +5755,7 @@
         "h": 4,
         "w": 3,
         "x": 21,
-        "y": 185
+        "y": 177
       },
       "id": 81,
       "options": {
@@ -5823,7 +5823,7 @@
         "h": 4,
         "w": 3,
         "x": 6,
-        "y": 185
+        "y": 177
       },
       "id": 82,
       "options": {
@@ -5891,7 +5891,7 @@
         "h": 4,
         "w": 3,
         "x": 18,
-        "y": 185
+        "y": 177
       },
       "id": 83,
       "options": {
@@ -5959,14 +5959,14 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 189
+        "y": 181
       },
       "id": 109,
       "options": {
         "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "center",
-        "orientation": "horizontal",
+        "orientation": "vertical",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -6027,14 +6027,14 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 189
+        "y": 181
       },
       "id": 110,
       "options": {
         "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "center",
-        "orientation": "horizontal",
+        "orientation": "vertical",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -6065,7 +6065,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 195
+        "y": 187
       },
       "id": 98,
       "title": "Hardware Temperatures",
@@ -6140,7 +6140,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 196
+        "y": 188
       },
       "id": 99,
       "options": {
@@ -6234,7 +6234,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 196
+        "y": 188
       },
       "id": 100,
       "options": {
@@ -6328,7 +6328,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 204
+        "y": 196
       },
       "id": 101,
       "options": {
@@ -6422,7 +6422,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 204
+        "y": 196
       },
       "id": 102,
       "options": {
@@ -6516,7 +6516,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 212
+        "y": 204
       },
       "id": 103,
       "options": {
@@ -6610,7 +6610,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 212
+        "y": 204
       },
       "id": 104,
       "options": {
@@ -6706,7 +6706,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 220
+        "y": 212
       },
       "id": 105,
       "options": {
@@ -6811,7 +6811,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 220
+        "y": 212
       },
       "id": 106,
       "options": {
