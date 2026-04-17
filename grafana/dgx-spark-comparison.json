@@ -113,7 +113,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 0,
         "y": 1
       },
@@ -181,7 +181,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 12,
         "y": 1
       },
@@ -249,9 +249,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 5
+        "w": 3,
+        "x": 3,
+        "y": 1
       },
       "id": 4,
       "options": {
@@ -317,9 +317,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 5
+        "w": 3,
+        "x": 15,
+        "y": 1
       },
       "id": 5,
       "options": {
@@ -385,9 +385,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 9
+        "w": 3,
+        "x": 6,
+        "y": 1
       },
       "id": 6,
       "options": {
@@ -453,9 +453,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 9
+        "w": 3,
+        "x": 18,
+        "y": 1
       },
       "id": 7,
       "options": {
@@ -521,9 +521,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 13
+        "w": 3,
+        "x": 9,
+        "y": 1
       },
       "id": 8,
       "options": {
@@ -589,9 +589,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 13
+        "w": 3,
+        "x": 21,
+        "y": 1
       },
       "id": 9,
       "options": {
@@ -659,9 +659,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 0,
-        "y": 17
+        "y": 5
       },
       "id": 10,
       "options": {
@@ -727,9 +727,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 12,
-        "y": 17
+        "y": 5
       },
       "id": 11,
       "options": {
@@ -793,9 +793,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 21
+        "w": 3,
+        "x": 3,
+        "y": 5
       },
       "id": 12,
       "options": {
@@ -861,9 +861,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 21
+        "w": 3,
+        "x": 15,
+        "y": 5
       },
       "id": 13,
       "options": {
@@ -921,9 +921,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 25
+        "w": 3,
+        "x": 6,
+        "y": 5
       },
       "id": 14,
       "options": {
@@ -981,9 +981,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 25
+        "w": 3,
+        "x": 18,
+        "y": 5
       },
       "id": 15,
       "options": {
@@ -1016,12 +1016,148 @@
       ]
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 9,
+        "y": 5
+      },
+      "id": 107,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "Swap Usage",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "expr": "(nv_swap_used_bytes{host=\"$host1\"} / nv_swap_total_bytes{host=\"$host1\"}) * 100",
+          "instant": true,
+          "legendFormat": "Swap Usage",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 21,
+        "y": 5
+      },
+      "id": 108,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "Swap Usage",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "expr": "(nv_swap_used_bytes{host=\"$host2\"} / nv_swap_total_bytes{host=\"$host2\"}) * 100",
+          "instant": true,
+          "legendFormat": "Swap Usage",
+          "refId": "A"
+        }
+      ]
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 9
       },
       "id": 16,
       "title": "GPU",
@@ -1078,7 +1214,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 10
       },
       "id": 17,
       "options": {
@@ -1154,7 +1290,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 30
+        "y": 10
       },
       "id": 18,
       "options": {
@@ -1228,7 +1364,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 18
       },
       "id": 19,
       "options": {
@@ -1302,7 +1438,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 18
       },
       "id": 20,
       "options": {
@@ -1376,7 +1512,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 26
       },
       "id": 21,
       "options": {
@@ -1450,7 +1586,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 46
+        "y": 26
       },
       "id": 22,
       "options": {
@@ -1524,7 +1660,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 54
+        "y": 34
       },
       "id": 23,
       "options": {
@@ -1598,7 +1734,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 54
+        "y": 34
       },
       "id": 24,
       "options": {
@@ -1674,7 +1810,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 62
+        "y": 42
       },
       "id": 25,
       "options": {
@@ -1759,7 +1895,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 62
+        "y": 42
       },
       "id": 26,
       "options": {
@@ -1800,7 +1936,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 50
       },
       "id": 27,
       "title": "CPU",
@@ -1857,7 +1993,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 71
+        "y": 51
       },
       "id": 28,
       "options": {
@@ -1933,7 +2069,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 71
+        "y": 51
       },
       "id": 29,
       "options": {
@@ -2009,7 +2145,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 79
+        "y": 59
       },
       "id": 30,
       "options": {
@@ -2085,7 +2221,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 79
+        "y": 59
       },
       "id": 31,
       "options": {
@@ -2159,7 +2295,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 87
+        "y": 67
       },
       "id": 32,
       "options": {
@@ -2233,7 +2369,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 87
+        "y": 67
       },
       "id": 33,
       "options": {
@@ -2307,7 +2443,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 95
+        "y": 75
       },
       "id": 34,
       "options": {
@@ -2381,7 +2517,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 95
+        "y": 75
       },
       "id": 35,
       "options": {
@@ -2455,7 +2591,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 103
+        "y": 83
       },
       "id": 36,
       "options": {
@@ -2547,7 +2683,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 103
+        "y": 83
       },
       "id": 37,
       "options": {
@@ -2651,7 +2787,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 111
+        "y": 91
       },
       "id": 38,
       "options": {
@@ -2746,7 +2882,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 111
+        "y": 91
       },
       "id": 39,
       "options": {
@@ -2787,7 +2923,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 119
+        "y": 99
       },
       "id": 40,
       "title": "Memory & Swap",
@@ -2879,7 +3015,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 120
+        "y": 100
       },
       "id": 41,
       "options": {
@@ -3008,7 +3144,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 120
+        "y": 100
       },
       "id": 42,
       "options": {
@@ -3049,142 +3185,6 @@
           "expr": "nv_memory_total_bytes{host=\"$host2\"}",
           "legendFormat": "Total",
           "refId": "C"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 128
-      },
-      "id": 43,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "RAM Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_memory_used_bytes{host=\"$host1\"} / nv_memory_total_bytes{host=\"$host1\"} * 100",
-          "instant": true,
-          "legendFormat": "RAM %",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 128
-      },
-      "id": 44,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "RAM Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_memory_used_bytes{host=\"$host2\"} / nv_memory_total_bytes{host=\"$host2\"} * 100",
-          "instant": true,
-          "legendFormat": "RAM %",
-          "refId": "A"
         }
       ]
     },
@@ -3266,7 +3266,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 136
+        "y": 108
       },
       "id": 45,
       "options": {
@@ -3379,7 +3379,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 136
+        "y": 108
       },
       "id": 46,
       "options": {
@@ -3411,142 +3411,6 @@
           "expr": "nv_swap_total_bytes{host=\"$host2\"}",
           "legendFormat": "Total",
           "refId": "B"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 144
-      },
-      "id": 47,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "Swap Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_swap_used_bytes{host=\"$host1\"} / nv_swap_total_bytes{host=\"$host1\"} * 100",
-          "instant": true,
-          "legendFormat": "Swap %",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 144
-      },
-      "id": 48,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "Swap Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_swap_used_bytes{host=\"$host2\"} / nv_swap_total_bytes{host=\"$host2\"} * 100",
-          "instant": true,
-          "legendFormat": "Swap %",
-          "refId": "A"
         }
       ]
     },
@@ -3641,7 +3505,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 152
+        "y": 116
       },
       "id": 49,
       "options": {
@@ -3767,7 +3631,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 152
+        "y": 116
       },
       "id": 50,
       "options": {
@@ -3862,7 +3726,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 160
+        "y": 124
       },
       "id": 51,
       "options": {
@@ -3948,7 +3812,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 160
+        "y": 124
       },
       "id": 52,
       "options": {
@@ -3980,7 +3844,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 168
+        "y": 132
       },
       "id": 53,
       "title": "RDMA / InfiniBand",
@@ -4035,7 +3899,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 169
+        "y": 133
       },
       "id": 54,
       "options": {
@@ -4118,7 +3982,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 169
+        "y": 133
       },
       "id": 55,
       "options": {
@@ -4201,7 +4065,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 177
+        "y": 141
       },
       "id": 56,
       "options": {
@@ -4284,7 +4148,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 177
+        "y": 141
       },
       "id": 57,
       "options": {
@@ -4367,7 +4231,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 185
+        "y": 149
       },
       "id": 58,
       "options": {
@@ -4441,7 +4305,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 185
+        "y": 149
       },
       "id": 59,
       "options": {
@@ -4473,7 +4337,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 193
+        "y": 157
       },
       "id": 60,
       "title": "Disk (Node Exporter)",
@@ -4528,7 +4392,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 194
+        "y": 158
       },
       "id": 61,
       "options": {
@@ -4611,7 +4475,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 194
+        "y": 158
       },
       "id": 62,
       "options": {
@@ -4694,7 +4558,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 194
+        "y": 158
       },
       "id": 63,
       "options": {
@@ -4777,7 +4641,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 194
+        "y": 158
       },
       "id": 64,
       "options": {
@@ -4818,7 +4682,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 202
+        "y": 166
       },
       "id": 65,
       "title": "Network (Node Exporter)",
@@ -4873,7 +4737,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 203
+        "y": 167
       },
       "id": 66,
       "options": {
@@ -4956,7 +4820,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 203
+        "y": 167
       },
       "id": 67,
       "options": {
@@ -5057,7 +4921,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 203
+        "y": 167
       },
       "id": 68,
       "options": {
@@ -5140,7 +5004,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 203
+        "y": 167
       },
       "id": 69,
       "options": {
@@ -5199,7 +5063,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 211
+        "y": 175
       },
       "id": 70,
       "title": "Containers (cAdvisor)",
@@ -5254,7 +5118,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 212
+        "y": 176
       },
       "id": 71,
       "options": {
@@ -5328,7 +5192,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 212
+        "y": 176
       },
       "id": 72,
       "options": {
@@ -5402,7 +5266,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 212
+        "y": 176
       },
       "id": 73,
       "options": {
@@ -5476,7 +5340,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 212
+        "y": 176
       },
       "id": 74,
       "options": {
@@ -5508,7 +5372,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 220
+        "y": 184
       },
       "id": 75,
       "title": "Temperature Overview",
@@ -5549,9 +5413,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 0,
-        "y": 221
+        "y": 185
       },
       "id": 76,
       "options": {
@@ -5617,9 +5481,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 3,
         "x": 12,
-        "y": 221
+        "y": 185
       },
       "id": 77,
       "options": {
@@ -5685,9 +5549,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 225
+        "w": 3,
+        "x": 3,
+        "y": 185
       },
       "id": 78,
       "options": {
@@ -5753,9 +5617,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 225
+        "w": 3,
+        "x": 15,
+        "y": 185
       },
       "id": 79,
       "options": {
@@ -5821,9 +5685,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 229
+        "w": 3,
+        "x": 9,
+        "y": 185
       },
       "id": 80,
       "options": {
@@ -5889,9 +5753,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 229
+        "w": 3,
+        "x": 21,
+        "y": 185
       },
       "id": 81,
       "options": {
@@ -5957,9 +5821,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 233
+        "w": 3,
+        "x": 6,
+        "y": 185
       },
       "id": 82,
       "options": {
@@ -6025,9 +5889,9 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 233
+        "w": 3,
+        "x": 18,
+        "y": 185
       },
       "id": 83,
       "options": {
@@ -6092,27 +5956,27 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 6,
         "w": 12,
         "x": 0,
-        "y": 237
+        "y": 189
       },
-      "id": 84,
+      "id": 109,
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
-        "orientation": "auto",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
           "fields": "",
-          "values": false
+          "values": true
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
-      "title": "Zone 1",
+      "title": "Zones",
       "type": "stat",
       "targets": [
         {
@@ -6120,9 +5984,9 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp1\"}",
+          "expr": "label_replace(node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=~\"temp[1-7]\"}, \"display\", \"Zone $1\", \"sensor\", \"temp(.+)\")",
           "instant": true,
-          "legendFormat": "Zone 1",
+          "legendFormat": "{{display}}",
           "refId": "A"
         }
       ]
@@ -6160,27 +6024,27 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 6,
         "w": 12,
         "x": 12,
-        "y": 237
+        "y": 189
       },
-      "id": 85,
+      "id": 110,
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
-        "orientation": "auto",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
           "fields": "",
-          "values": false
+          "values": true
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
-      "title": "Zone 1",
+      "title": "Zones",
       "type": "stat",
       "targets": [
         {
@@ -6188,825 +6052,9 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp1\"}",
+          "expr": "label_replace(node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=~\"temp[1-7]\"}, \"display\", \"Zone $1\", \"sensor\", \"temp(.+)\")",
           "instant": true,
-          "legendFormat": "Zone 1",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 241
-      },
-      "id": 86,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 2",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp2\"}",
-          "instant": true,
-          "legendFormat": "Zone 2",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 241
-      },
-      "id": 87,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 2",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp2\"}",
-          "instant": true,
-          "legendFormat": "Zone 2",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 245
-      },
-      "id": 88,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 3",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp3\"}",
-          "instant": true,
-          "legendFormat": "Zone 3",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 245
-      },
-      "id": 89,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 3",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp3\"}",
-          "instant": true,
-          "legendFormat": "Zone 3",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 249
-      },
-      "id": 90,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 4",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp4\"}",
-          "instant": true,
-          "legendFormat": "Zone 4",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 249
-      },
-      "id": 91,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 4",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp4\"}",
-          "instant": true,
-          "legendFormat": "Zone 4",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 253
-      },
-      "id": 92,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 5",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp5\"}",
-          "instant": true,
-          "legendFormat": "Zone 5",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 253
-      },
-      "id": 93,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 5",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp5\"}",
-          "instant": true,
-          "legendFormat": "Zone 5",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 257
-      },
-      "id": 94,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 6",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp6\"}",
-          "instant": true,
-          "legendFormat": "Zone 6",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 257
-      },
-      "id": 95,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 6",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp6\"}",
-          "instant": true,
-          "legendFormat": "Zone 6",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 261
-      },
-      "id": 96,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 7",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host1\",chip=\"thermal_thermal_zone0\",sensor=\"temp7\"}",
-          "instant": true,
-          "legendFormat": "Zone 7",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 60
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "celsius"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 261
-      },
-      "id": 97,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "title": "Zone 7",
-      "type": "stat",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "node_hwmon_temp_celsius{host=\"$host2\",chip=\"thermal_thermal_zone0\",sensor=\"temp7\"}",
-          "instant": true,
-          "legendFormat": "Zone 7",
+          "legendFormat": "{{display}}",
           "refId": "A"
         }
       ]
@@ -7017,7 +6065,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 265
+        "y": 195
       },
       "id": 98,
       "title": "Hardware Temperatures",
@@ -7092,7 +6140,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 266
+        "y": 196
       },
       "id": 99,
       "options": {
@@ -7186,7 +6234,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 266
+        "y": 196
       },
       "id": 100,
       "options": {
@@ -7280,7 +6328,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 274
+        "y": 204
       },
       "id": 101,
       "options": {
@@ -7374,7 +6422,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 274
+        "y": 204
       },
       "id": 102,
       "options": {
@@ -7468,7 +6516,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 282
+        "y": 212
       },
       "id": 103,
       "options": {
@@ -7562,7 +6610,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 282
+        "y": 212
       },
       "id": 104,
       "options": {
@@ -7658,7 +6706,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 290
+        "y": 220
       },
       "id": 105,
       "options": {
@@ -7763,7 +6811,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 290
+        "y": 220
       },
       "id": 106,
       "options": {
