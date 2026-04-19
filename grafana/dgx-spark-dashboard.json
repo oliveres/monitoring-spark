@@ -113,8 +113,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 4,
-        "x": 4,
+        "w": 3,
+        "x": 3,
         "y": 1
       },
       "id": 4,
@@ -181,7 +181,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 4,
+        "w": 3,
         "x": 0,
         "y": 1
       },
@@ -250,7 +250,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 8,
+        "x": 6,
         "y": 1
       },
       "id": 6,
@@ -318,7 +318,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 11,
+        "x": 9,
         "y": 1
       },
       "id": 7,
@@ -388,7 +388,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 17,
+        "x": 15,
         "y": 1
       },
       "id": 93,
@@ -436,6 +436,74 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 18,
+        "y": 1
+      },
+      "id": 94,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "title": "Swap Usage",
+      "type": "gauge",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "expr": "(nv_swap_used_bytes{host=\"$host\"} / nv_swap_total_bytes{host=\"$host\"}) * 100",
+          "instant": true,
+          "legendFormat": "Swap %",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -445,8 +513,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 1
       },
       "id": 8,
@@ -514,7 +582,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 14,
+        "x": 12,
         "y": 1
       },
       "id": 9,
@@ -1605,7 +1673,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 10,
+        "w": 12,
         "x": 0,
         "y": 48
       },
@@ -1654,74 +1722,6 @@
           "expr": "nv_memory_total_bytes{host=\"$host\"}",
           "legendFormat": "Total",
           "refId": "C"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 2,
-        "x": 10,
-        "y": 48
-      },
-      "id": 32,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "RAM Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_memory_used_bytes{host=\"$host\"} / nv_memory_total_bytes{host=\"$host\"} * 100",
-          "instant": true,
-          "legendFormat": "RAM %",
-          "refId": "A"
         }
       ]
     },
@@ -1801,7 +1801,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 10,
+        "w": 12,
         "x": 12,
         "y": 48
       },
@@ -1841,74 +1841,6 @@
           "expr": "nv_swap_total_bytes{host=\"$host\"}",
           "legendFormat": "Total",
           "refId": "B"
-        }
-      ]
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 85
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 2,
-        "x": 22,
-        "y": 48
-      },
-      "id": 34,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "title": "Swap Usage %",
-      "type": "gauge",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "expr": "nv_swap_used_bytes{host=\"$host\"} / nv_swap_total_bytes{host=\"$host\"} * 100",
-          "instant": true,
-          "legendFormat": "Swap %",
-          "refId": "A"
         }
       ]
     },
@@ -2681,7 +2613,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_bytes_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_bytes_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX",
           "refId": "A"
         },
@@ -2690,7 +2622,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_bytes_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_bytes_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX",
           "refId": "B"
         }
@@ -2770,7 +2702,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_errs_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_errs_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX errors",
           "refId": "A"
         },
@@ -2779,7 +2711,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_errs_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_errs_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX errors",
           "refId": "B"
         },
@@ -2788,7 +2720,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_receive_drop_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_receive_drop_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} RX drops",
           "refId": "C"
         },
@@ -2797,7 +2729,7 @@
             "type": "prometheus",
             "uid": "Prometheus"
           },
-          "expr": "rate(node_network_transmit_drop_total{host=\"$host\",device!=\"lo\"}[5m])",
+          "expr": "rate(node_network_transmit_drop_total{host=\"$host\",device=~\"enP7s7|enp1s0f0np0|enp1s0f1np1\"}[5m])",
           "legendFormat": "{{device}} TX drops",
           "refId": "D"
         }
@@ -4178,7 +4110,7 @@
           "type": "prometheus",
           "uid": "Prometheus"
         },
-        "definition": "label_values(up{job="nv-monitor"}, host)",
+        "definition": "label_values(up{job=\"nv-monitor\"}, host)",
         "hide": 0,
         "includeAll": false,
         "label": "Host",
@@ -4186,7 +4118,7 @@
         "name": "host",
         "options": [],
         "query": {
-          "query": "label_values(up{job="nv-monitor"}, host)",
+          "query": "label_values(up{job=\"nv-monitor\"}, host)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 2,
