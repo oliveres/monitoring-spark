@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh GB10 GPU throttle metrics every 10s
+Documentation=https://github.com/oliveres/monitoring-spark
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=10s
+AccuracySec=1s
+Unit=nv-throttle-exporter.service
+
+[Install]
+WantedBy=timers.target

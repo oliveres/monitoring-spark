@@ -1,0 +1,17 @@
+[Unit]
+Description=GB10 GPU throttle metrics for node_exporter textfile collector
+Documentation=https://github.com/oliveres/monitoring-spark
+After=nvidia-persistenced.service
+Wants=nvidia-persistenced.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/nv-throttle-exporter.sh
+Nice=10
+
+# nvidia-smi needs no privilege; only the textfile directory is written.
+ProtectSystem=strict
+ReadWritePaths=/var/lib/node_exporter/textfile_collector
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes

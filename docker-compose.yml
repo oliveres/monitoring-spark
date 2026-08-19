@@ -59,6 +59,9 @@ services:
       - --path.sysfs=/host/sys
       - --path.rootfs=/host
       - --collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)
+      # Host path: /var/lib/node_exporter/textfile_collector
+      # (reachable via the / -> /host bind mount below)
+      - --collector.textfile.directory=/host/var/lib/node_exporter/textfile_collector
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
